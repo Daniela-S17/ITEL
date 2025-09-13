@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ITEL</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="topbar" role="banner">
+      <button
+        id="toggleMenu"
+        class="menu-btn"
+        aria-label="Abrir menú de navegación"
+        aria-controls="sidebar"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+      <h1>Banner ITEL</h1>
+      <p>Formación para el trabajo</p>
+      <div class="topbar-actions">
+        <button
+          class="icon-btn"
+          id="btn-notificaciones"
+          title="Notificaciones"
+          aria-label="Notificaciones"
+        >
+          <i class="fa fa-bell"></i>
+          <!-- Badge opcional -->
+          <span class="badge">2</span>
+        </button>
+        <div class="dropdown" id="notificaciones-dropdown">
+          <p><strong>Notificaciones</strong></p>
+          <ul>
+            <li>Clase de Matemática hoy a las 18:00</li>
+            <li>Nuevo documento disponible</li>
+            <li>¡Tienes una nueva calificación!</li>
+          </ul>
+        </div>
+        <button
+          class="icon-btn"
+          id="btn-mensajes"
+          title="Mensajes"
+          aria-label="Mensajes"
+        >
+          <i class="fa fa-envelope"></i>
+          <!-- Badge opcional -->
+          <span class="badge">3</span>
+        </button>
+        <div class="dropdown" id="mensajes-dropdown">
+          <p><strong>Chats</strong></p>
+          <ul>
+            <li><strong>Profe Juan:</strong> Recuerda la tarea</li>
+            <li><strong>Grupo Sistemas:</strong> Reunión mañana</li>
+            <li><strong>Secretaría:</strong> Documentos listos</li>
+          </ul>
+        </div>
+        <input
+          type="text"
+          placeholder="Buscar..."
+          class="search-bar"
+          aria-label="Buscar"
+        />
+      </div>
+    </header>
+    <div class="main-layout">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-profile">
+          <div class="profile-icon"><i class="fa fa-graduation-cap"></i></div>
+          <div>
+            <strong>María González</strong><br />
+            <span>Sistemas - Nocturno</span>
+          </div>
+        </div>
+        <nav>
+          <ul>
+            <li class="active"><i class="fa fa-book"></i> Mis Materias</li>
+            <li><i class="fa fa-calendar"></i> Horarios</li>
+            <li><i class="fa fa-graduation-cap"></i> Practicas</li>
+            <li><i class="fa fa-file"></i> Certificados</li>
+            <li><i class="fa fa-envelope"></i> Mensajes</li>
+          </ul>
+        </nav>
+      </aside>
+      <main class="dashboard">
+        <!-- Se elimina el área de foto de perfil -->
+
+        <!-- Se agrupan calendario y eventos -->
+        <section
+          id="calendario-eventos"
+          class="calendario-eventos"
+          aria-labelledby="calendario-eventos-titulo"
+        >
+          <h2 id="calendario-eventos-titulo">Calendario y Eventos</h2>
+          <div class="calendario-eventos-grid">
+            <div class="calendario" aria-labelledby="calendario-titulo">
+              <h3 id="calendario-titulo">Calendario - Enero 2016</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>D</th>
+                    <th>L</th>
+                    <th>M</th>
+                    <th>M</th>
+                    <th>J</th>
+                    <th>V</th>
+                    <th>S</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>27</td>
+                    <td>28</td>
+                    <td>29</td>
+                    <td>30</td>
+                    <td>31</td>
+                    <td>1</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td class="selected">13</td>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                  </tr>
+                  <tr>
+                    <td>17</td>
+                    <td>18</td>
+                    <td>19</td>
+                    <td class="selected">20</td>
+                    <td class="selected">21</td>
+                    <td>22</td>
+                    <td>23</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="eventos" aria-labelledby="eventos-titulo">
+              <h3 id="eventos-titulo">Eventos</h3>
+              <label><input type="checkbox" /> No seleccionado</label>
+              <label><input type="checkbox" checked /> Seleccionado</label>
+              <label
+                ><input type="checkbox" id="indeterminate" />
+                Indeterminado</label
+              >
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="materias"
+          class="materias"
+          aria-labelledby="materias-titulo"
+        >
+          <h2 id="materias-titulo">Materias</h2>
+          <ul>
+            <li>
+              <span>Materia 1</span>
+              <button type="button">Ver materia</button>
+            </li>
+            <li>
+              <span>Materia 2</span>
+              <button type="button">Ver materia</button>
+            </li>
+          </ul>
+        </section>
+
+        <section
+          id="practicas"
+          class="registro"
+          aria-labelledby="practicas-titulo"
+        >
+          <h2 id="practicas-titulo">Registro de prácticas</h2>
+          <form>
+            <label for="fecha">Fecha y hora de asistencia</label>
+            <input id="fecha" type="datetime-local" />
+
+            <label for="informe">Informe del día</label>
+            <input id="informe" type="file" />
+
+            <label for="consentimiento">
+              <input id="consentimiento" type="checkbox" />
+              Acepto los términos y condiciones
+            </label>
+
+            <button type="submit">Registrar</button>
+          </form>
+        </section>
+
+        <section
+          id="certificaciones"
+          class="certificados"
+          aria-labelledby="certificados-titulo"
+        >
+          <h2 id="certificados-titulo">Certificados</h2>
+          <div>
+            <p>Certificado 1</p>
+            <p>Descripción del certificado</p>
+            <button>Descargar</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
